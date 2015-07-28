@@ -1,0 +1,32 @@
+_repo: The-War-of-the-Worlds_36
+creator:
+  author:
+    agent_name: Wells, H. G. (Herbert George)
+    alias: Wells, Herbert George
+    birthdate: 1866
+    deathdate: 1946
+    gutenberg_agent_id: '30'
+    url: http://www.gutenberg.org/2009/agents/30
+    wikipedia: http://en.wikipedia.org/wiki/H._G._Wells
+gutenberg_bookshelf:
+- Movie Books
+- Science Fiction
+gutenberg_issued: '2004-10-01'
+gutenberg_type: Text
+identifiers:
+  gutenberg: '36'
+language: en
+publisher: Project Gutenberg
+rights: Public domain in the USA.
+rights_url: http://creativecommons.org/about/pdm
+subjects:
+- '!lcsh:Imaginary wars and battles -- Fiction'
+- '!lcsh:War stories'
+- '!lcsh:Mars (Planet) -- Fiction'
+- '!lcsh:Science fiction'
+- '!lcc:PR'
+- '!lcsh:Space warfare -- Fiction'
+- '!lcsh:Martians -- Fiction'
+- '!lcsh:Life on other planets -- Fiction'
+title: The War of the Worlds
+url: http://www.gutenberg.org/ebooks/36
