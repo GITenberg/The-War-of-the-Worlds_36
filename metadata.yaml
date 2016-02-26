@@ -1,5 +1,5 @@
 _repo: The-War-of-the-Worlds_36
-_version: 0.0.2
+_version: 0.1.0
 covers:
 - attribution: Kjell Roger Ringstad, 2015
   cover_type: original
@@ -36,5 +36,6 @@ subjects:
 - '!lcsh: Space warfare -- Fiction'
 - '!lcsh: Life on other planets -- Fiction'
 - '!lcsh: War stories'
+- GITenberg
 title: The War of the Worlds
 url: http://www.gutenberg.org/ebooks/36
