@@ -21,13 +21,15 @@ script:
 - /usr/bin/python asciidoctor-htmlbook/gitberg-machine/machine.py -o . -m metadata.yaml book.html
 - xsltproc -stringparam external.assets.list " " ./HTMLBook/htmlbook-xsl/epub.xsl book.html
 - cp ./HTMLBook/stylesheets/epub/epub.css OEBPS
-- cp cover.jpg OEBPS/cover.jpg
+- if [ -e cover.jpg ]; then cp cover.jpg OEBPS/cover.jpg; fi
 # look for first images directory and one found, copy over to ./OEBPS
 - find . -name images -type d | head -n 1 | xargs -I {} mv {} ./OEBPS/
 - zip -rX book.epub mimetype
 - zip -rX book.epub OEBPS/ META-INF/
 - if test -d "OEBPS/images/"; then zip -rX book.epub OEBPS/images/ ;fi
 - mv book.epub The-War-of-the-Worlds.epub
+- ebook-convert The-War-of-the-Worlds.epub The-War-of-the-Worlds.mobi
+- xvfb-run ebook-convert The-War-of-the-Worlds.epub The-War-of-the-Worlds.pdf
 branches:
   only:
   - master
@@ -43,10 +45,15 @@ deploy:
   provider: releases
   api_key:
     secure: 4lUgMQorZVq9f5kD9QIzehfTd0OlaUhnu0gUxJk+CMPr8jUtK8+Sx2vkKJ7tG5F2h6YPUCOwez+7evYhsk4MIdFUwc7Tf+orCxK5zzpjF6MdDE4R2XHrd56CraDQdfzc/k+DmqIgZEb4MKy349zJkqH8FLOwUQZtx2nY2hJKM2NB3ib++OYom43rTSJCWfEU3jGfsu5MwDgyKI6rQmz4ZPYQA1redED1MKU4xI3PklAEjl+Yol12nOEc5kKrsFAz07yrHGk+edZUD96YvNXpBJ+n0ZhU5vaHMGE7VorK7FcEd5BHpkIh01vZgIQkogn+HlaygEkkYUnIsMoav6QCp7IXkG1c5WHNZSxsrq3onZSqxvJsZAaWlYJttk0LB1kqzSKnWPY7z+nqs1OEFPxqrLlVeRYCd8wj4cGtcvR1v0o3gT7hrfUQyX4PsC6eFeJ73ZoOx/5O9RSyepf435PJxzP4gpKZrFuOt8GKfJFsZD77cxxmAEgozjUVm1tdq+DJf36n2pA5xfYhhM8omZKH9427JzmORhoD1i1pRoyrmi7ORbqgNZ2RjeTN6o5qT7DJ5lXvZWBOYc97dU72dMIFLEbSR9OHfdb1FBlCIH442s5diWkqs+maFJegCCFvb6vQMEc9/Qt3vFVOo9XVn155eveL4BMgPfnU3OyaE4HNmHk=
-  file: The-War-of-the-Worlds.epub
+  file:
+    - The-War-of-the-Worlds.epub
+    - The-War-of-the-Worlds.mobi
+    - The-War-of-the-Worlds.pdf
   "on":
     repo: GITenberg/The-War-of-the-Worlds_36
 addons:
   apt:
     packages:
     - xsltproc
+    - xvfb
+    - calibre
