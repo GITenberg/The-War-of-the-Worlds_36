@@ -1,5 +1,5 @@
 _repo: The-War-of-the-Worlds_36
-_version: 0.2.1
+_version: 0.2.2
 covers:
 - attribution: Kjell Roger Ringstad, 2015
   cover_type: original
@@ -15,6 +15,8 @@ creator:
     gutenberg_agent_id: '30'
     url: http://www.gutenberg.org/2009/agents/30
     wikipedia: http://en.wikipedia.org/wiki/H._G._Wells
+edition_identifiers:
+  edition_id: http://www.gutenberg.org/ebooks/36#The-War-of-the-Worlds
 gutenberg_bookshelf:
 - Movie Books
 - Science Fiction
